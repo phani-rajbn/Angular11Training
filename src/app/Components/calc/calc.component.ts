@@ -7,26 +7,16 @@ import { Component } from '@angular/core';
 
 //OnInit interface has ngOnInit where we do initialization for UR component
 export class CalcComponent{
-  constructor() { }
-  firstValue : number = 450;
-  secondValue : number = 560;
-  result : number = this.firstValue + this.secondValue;
-  operand : string = "-";
+  first : number = 0.0;
+  second : number =0.0;
+  result : number = 0.0;
+  
+  onAdd = (first : number, second : number ) =>  this.result = first + second; 
+  
+  onSubtract = (first: number, second: number) => this.result = first - second;
+  
+  onSqr = (num : number) => this.result = num * num ;
 
-  getResult(){
-    switch(this.operand){
-      case "+":
-        this.result = this.firstValue + this.secondValue;
-        break;
-      case "-":
-        this.result = this.firstValue - this.secondValue;
-        break;
-      case "*":
-        this.result = this.firstValue * this.secondValue;
-        break;
-      case "/":
-        this.result = this.firstValue / this.secondValue;
-        break;                   
-    }
-  }
+  onSqrt = (num : number) => this.result = Math.sqrt(num);
+  //todo: write down the functions for multiply, divide, sqr and Sqrroot. 
 }

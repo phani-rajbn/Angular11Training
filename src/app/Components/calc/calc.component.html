@@ -1,13 +1,19 @@
-<h2>Calculator Program</h2>
-<p>
-    <input type="number" [(ngModel)] = "firstValue" placeholder="Enter First Value">
-    <select [(ngModel)]="operand">
-    <option>+</option>
-        <option>-</option>
-        <option>*</option>
-        <option>/</option>
-    </select>
-    <input type="number" [(ngModel)] = "secondValue" placeholder="Enter Second Value"/>
-    <button (click)="getResult()">=</button>
-    <span>{{result}}</span>
-</p>
+<h2>Math Calc!!!</h2>
+<hr>
+<div>
+    <p><input [(ngModel)]="first"  type="number" placeholder="Enter First Value"/></p>
+    <p><input [(ngModel)]="second" type="number" placeholder="Enter Second Value"/></p>
+    <p>
+        <button (click) = "onAdd(first,second)">+</button>
+        <button (click) = "onSubtract(first,second)">-</button>
+        <button>X</button>
+        <button>/</button>
+        <button (click) = "onSqr(first)">Sqr</button>
+        <button (click) = "onSqrt(first)">Sqrt</button>    
+    </p>
+    <p>The Result: {{result}}</p>
+</div>
+<!--
+    ngModel is way of achieving 2-way binding b/w the data and the User interface.
+    To Use ngModel, U should include FormsModule, an external Angular Module into UR Module
+ -->
