@@ -1,7 +1,7 @@
 # Angular11Training
 Training on Angular 11
 <hr/>
-# Day 1<br/>
+# Day 1
 <li>Intro to Angular Applications
 <li>Important Featurs of Angular
 <li>Angular CLI
