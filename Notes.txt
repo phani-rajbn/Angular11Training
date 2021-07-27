@@ -1,0 +1,69 @@
+Software requirements:
+1. Visual Studio Code. 
+2. Nodejs installation. 
+3. Angular CLI(Command line interface).
+4. Required Back end support(Sql server or MySQL or any database of UR choice)
+
+Prequisites:
+HTML 5, CSS, JavaScript, TypeScript.
+Pages, Static and Dynamic pages, Server side and Client side Web App Development. 
+
+What is Angular?
+Angular is a JS framework for developing Single Page Applications(SPA). This makes UR app interactive, look and feek to be good and responsive in nature. Developed by Google with multiple versions. Latest support is provided on Angular 11.  
+Features of Angular:
+Developed for creating Applications based on Component architecture. Components are resuable individual pieces of code that can be added into the application to make it more productive. It is based in Seperation of concerns, a principle in Programming that allows each piece of software to have self contained feature that will not affect the other part of the application if replaced. 
+Easy to extend features in the Application.
+Directives that will provide sp instructions to the browser when used and generate a structural DOM and make the application look nice. With Directives, U can generate a heavy DOM structure with a single line.  
+Filters called PIPES to Transform Ur data into a specific UI Feature that will be used in the application. 
+Singleton(Only one reference of it will be there when the App executes) Services could be created to provide Functions that can be commonly used across the Components of UR Angular Application. 
+Routing is a feature of Angular that allows  to provide specific URL patterns to the users to get the required feature in their SPA. 
+From Angular 7, we have PWA(Progressive Web Apps) which will allow to install the application and work offline as if the whole app is available in ur device. 
+Dependency Injection of the Components and services to make UR app developememnt smoother. DI provides the required support for consuming a feature inside UR component without worrying on who created it or its dependencies. DI helps in using the services created by 3rd party vendors into UR application with little or less effort. @inject directive is used to create components that can be injected into another. 
+
+Relation of Angular App Development with Nodejs
+Nodejs is a platform for developing JS Applications out of browser. This will allow to create JS based Applications that can behave like a typical server side application. U can create Web servers, U can Create Services, IO operations using JS. U can create adhoc web servers without any heavy infrastructure.
+Angular Apps that U develop are actually hosted on the NODEJS Environment. 
+With NODEJS U get NPM(Node Package Manager) a repository of packages that are available for free download and usages. 
+Angular is published using NPM. NPM is installed along with Nodejs. 
+Angular Applications are hosted inside the Nodejs Environment. 
+How to create an Angular Application?
+install nodejs and along with it comes NPM, a package manager  for Nodejs Applications. 
+node --version will display the version on ur terminal
+npm install -g @angular/cli -- install the Angular CLI into the machine. 
+''ng new sample-AngApp''
+
+Develop a simple Application using Angular.
+Mathematic Application that would be interactive with features of angular applied. 
+
+
+Day 2:
+Filters or Pipes. Pipes are Transformers that will convert UR data into a specific format so that it could be delivered as required in the User interface of the Application. We need this Transformers to display the data in the format that users specify in their application. There are list of predefined pipes that can be used for the application. 
+CurrencyPipe, UppercasePipe, LowerCasePipe, DecimalPipe, DatePipe, PercentagePipe are predefined by angular.
+
+
+Rest Service: A service is bunch of functions available across the internet to provides info or data for the consumers across the globle. These data could be info about customers, locations, any domain specific data. Examples include google maping services, google info services and many more. 
+
+Angular apps will consume the services that are available over the internet and display the data in their applications as per their required formats. 
+REST stands for REPRESENTATIONAL STATE TRANSFER. 
+It used HTTP protocol to interact with the customers. HTTP interally uses VERBS like GET, POST, PUT and DELETE to perform the data transfer thru' HTTP in the form of JSON/XML. So in this case, only data is transfered not the User interface. No HTML or any kind,except data as json or xml. 
+It is purely data transfer. 
+Developers consume these services either freely or on a subscription basis. 
+For the current example, we are using NODEJS package called json-server which provides the feature of creating a Web service with little or no effort. 
+installation instructions
+Download the json-server from npm as : npm install -g json-server
+Create a folder by any name based on ur Domain requirement.
+Create a file in it called as db.json and fill some json data in it. 
+Move to the folder in the cmd and run the json-server from it.
+The command: json-server --watch db.json
+Here db.json is the file that will store the data for U. 
+
+Once U understand Java's Microservices, then U expose the services as REST API using Frameworks like Spring and SpringBoot. For .NET programmers, they can expose the services using WEB API. Similarly every server side programming language has APIs to expose the services as REST Services. 
+
+With REST services, we use the HTTP Verbs to define the direction and purpose of the service call. 
+GET is used to retreive the data from the service. 
+POST is used to add the data to the service.
+PUT is used to update the data in the service
+DELETE is used to remove one or more data in the service. 
+
+
+
