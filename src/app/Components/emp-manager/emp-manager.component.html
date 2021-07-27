@@ -1,20 +1,25 @@
 <div>
     <h1>List of Employees with us!!!</h1>
+    <input type="search" placeholder="Find Name" name = "mySearch" [(ngModel)]="searchCriteria" />
     <table border="1">
         <tr>
             <th>Employee ID</th>
             <th>Employee Name</th>
             <th>Employee Address</th>
             <th>Employee Salary</th>
+            <th>Options</th>
         </tr>
-        <tr *ngFor="let emp of empList">
+        <tr *ngFor="let emp of empList | empfilter : searchCriteria">
             <td>{{emp.empId}}</td>
-            <td>{{emp.empName}}</td>
-            <td>{{emp.empAddress}}</td>
-            <td>{{emp.empSalary}}</td>
+            <td>{{emp.empName | uppercase}}</td>
+            <td>{{emp.empAddress | lowercase}}</td>
+            <td>{{emp.empSalary | currency : 'INR'}}</td>
+            <td><a href="#" (click) = "find(emp.empId)">Edit</a></td>
         </tr>    
     </table>
 </div>
+<emp-detail [selectedEmp] = foundEmp></emp-detail>
+<new-emp (onNewEmp) = "addNewEmp($event)"></new-emp>
 <!--
     Improvising the Emp Manager to have add, remove, update functions. 
     Input and Output parameters. 
@@ -22,4 +27,5 @@
     Services in Angular.
     how to create an adhoc REST Service using Nodejs. Data will be JSON file
     Life Cycle of an Angular Application 
+
  -->

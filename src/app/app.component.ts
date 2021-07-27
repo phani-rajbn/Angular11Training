@@ -14,7 +14,7 @@ export class AppComponent {
     salary : number = 65000;
     showMe : boolean = false;
     status : string = "Show Me";
-
+    
     //When U refer the class members in the function, U must refer it using this operator. 
     onShowMe(){ //Syntax of creating function within the class in Typescript...
       debugger;

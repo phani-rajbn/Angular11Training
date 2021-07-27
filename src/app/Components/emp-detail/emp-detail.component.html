@@ -1,0 +1,7 @@
+<div *ngIf="selectedEmp">
+    <h2>Employee Details to Edit</h2>
+    <p>Employee ID: {{selectedEmp.empId}}</p>
+    <p><input [(ngModel)]="selectedEmp.empName"/></p>
+    <p><input [(ngModel)]="selectedEmp.empAddress"/></p>
+    <p><input [(ngModel)]="selectedEmp.empSalary"/></p>
+</div>
