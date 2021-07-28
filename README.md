@@ -24,4 +24,13 @@ Training on Angular 11
 <li>Calling Async Functions</li>
 <li>RxJs Operations for HTTP calls</li>
 <li>Validations</li>
-  
+<br><br>
+# Day 3
+<li>REST Services</li>
+<li>Reactive Forms</li>
+<li>Forms based Validations</li>
+<li>Routes and Routing</li>
+<li>Brief of Lazy loading</li>
+<li>Unit Testing with Jasmine</li>
+<li>Creating and executing Test cases</li>
+<li>How e2e Testing works</li>  
