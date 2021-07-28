@@ -40,6 +40,7 @@ Day 2:
 Filters or Pipes. Pipes are Transformers that will convert UR data into a specific format so that it could be delivered as required in the User interface of the Application. We need this Transformers to display the data in the format that users specify in their application. There are list of predefined pipes that can be used for the application. 
 CurrencyPipe, UppercasePipe, LowerCasePipe, DecimalPipe, DatePipe, PercentagePipe are predefined by angular.
 
+Create a class that implements an interface called PipeTransform which has a method called transform
 
 Rest Service: A service is bunch of functions available across the internet to provides info or data for the consumers across the globle. These data could be info about customers, locations, any domain specific data. Examples include google maping services, google info services and many more. 
 
@@ -65,5 +66,14 @@ POST is used to add the data to the service.
 PUT is used to update the data in the service
 DELETE is used to remove one or more data in the service. 
 
+EmpManager: EmpList, EmpDetails for each Employee, NewEmp for registering new Employee
+EmpDetails expects an additional attribute called Employee whose details U want to display which is provided by the caller of the EmpDetails, in this case, the EmpManager. EmpManager is an outer component and EmpDetails in a component inside it(Inner Component). 
+@Input Directive is used to pass the data from one component to another. 
+@Output Directive is used to raise an event from one component and handle it in other component. It uses an interface object called EventEmitter that has a method called emit which ejects the object from the component to the caller. The caller will get this object by handling the event thru a parameter called $event.   
 
+Routing is a feature of displaying multiple pages on request using a User friendly logically bould URL formats. 
+
+Unit Testing and e2e Testing is one of the features of Angular Application development. 
+Unit Testings are tests done using Jasmine Framework to performs tests on the functions that U Create. 
+e2e Testings are done to perform automation testing of UR application from the browser perspective with the user interactions being automated. This is done using Protractor Framework along with Selenium. 
 
