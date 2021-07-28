@@ -1,9 +1,19 @@
-<div *ngIf="showMe">
-    <h2>{{title}}</h2>
-    <p>{{author}}</p>
-    <p>The Salary of this author is {{salary}}</p>
+<div style="text-align: center;">
+    <h1>Welcome to Angular Training</h1>
 </div>
-<button (click)="onShowMe()">{{status}}</button>
-<hr/>
-<app-calc></app-calc>
-<app-emp-manager></app-emp-manager>
+<div class="navBar">
+    <a class="aLink" [routerLink]="['/Home']" routerLinkActive="router-link-active">Home</a>
+    <a class="aLink" [routerLink]="['/Calc']" routerLinkActive="router-link-active">Calculator</a>
+    <a class="aLink" [routerLink]="['/Mgr']" routerLinkActive="router-link-active">Employee Manager</a>
+    <a class="aLink" [routerLink]="['/Rest']" routerLinkActive="router-link-active">Rest Service</a>
+    <a class="aLink" [routerLink]="['/Forms']" routerLinkActive="router-link-active">Validation</a>
+    <a class="aLink" [routerLink]="['/Reactive']" routerLinkActive="router-link-active">Reactive Validation</a>
+    <a class="aLink" [routerLink]="['/LazyLoading']" routerLinkActive="router-link-active">Reactive LazyLoading</a>
+    
+</div>
+<router-outlet></router-outlet>
+
+<!-- 
+    Advantages: Minimise the start time for the app Consumes less memory because the components are loaded on-demand. Unnessasary requests to the server is removed. 
+    Disadvantages: Frequently hitting Urls when lazy loaded will slow down the loading the components. U write extra code for handling routes for lazy loading components. U R not taking the advantage of Angular's performance as components are loaded at runtime and any request will happen during the process which will reduce the speed of the application.   
+-->

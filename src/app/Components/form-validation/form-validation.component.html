@@ -1,0 +1,30 @@
+<h1>Form validation in Angular</h1>
+<form class="form" #f1="ngForm">
+    <div class="col-lg-6">
+        <label for="EmpName"> Employee Name: </label>
+        <input class="form-control" name="EmpName" [(ngModel)]="empDetails.empName" required minlength="3" maxlength="20" type="text" id="EmpName" #eName=ngModel/>
+        <div class="err" *ngIf="eName.invalid">
+            <div *ngIf="eName.errors['required']">Employee Name is mandatory</div>
+            <div *ngIf="eName.errors['minlength']">Employee Name must be atleast a min of 3 charecters</div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <label for="EmpAddress"> Employee Address: </label>
+        <input class="form-control" name="EmpAddress" [(ngModel)]="empDetails.empAddress" required minlength="10" maxlength="20" type="text" id="EmpAddress" #eAddress=ngModel/>
+        <div class="err" *ngIf="eAddress.invalid">
+            <div *ngIf="eAddress.errors['required']">Employee Address is mandatory</div>
+            <div *ngIf="eAddress.errors['minlength']">Employee Address must be atleast a min of 10 charecters</div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <label for="EmpSalary"> Employee Salary: </label>
+        <input class="form-control" name="EmpSalary" [(ngModel)]="empDetails.empSalary" required minlength="3" maxlength="20" type="number" id="EmpSalary" #eSalary=ngModel/>
+        <div class="err" *ngIf="eSalary.invalid">
+            <div *ngIf="eSalary.errors['required']">Employee Salary is mandatory</div>
+            <div *ngIf="eSalary.errors['minlength']">Employee Salary must be atleast a min of 3 charecters</div>
+        </div>
+    </div>
+    <button [disabled]="f1.invalid" (click)="onClick()" class="btn btn-{{ f1.invalid ? 'danger' : 'success' }}">Save Changes</button>
+</form>

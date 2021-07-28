@@ -1,0 +1,30 @@
+<h1>Forms Validation using Reactive Forms</h1>
+<form [formGroup]="empForm" class="form">
+    <div class="col-lg-6">
+        <label for="EmpName"> Employee Name: </label>
+        <input class="form-control" formControlName="empName"/>
+        <div class="err" *ngIf="empForm.controls['empName'].invalid">
+            <div *ngIf="empForm.controls['empName'].errors['required']">Employee Name is mandatory</div>
+            <div *ngIf="empForm.controls['empName'].errors['minlength']">Employee Name must be atleast a min of 3 charecters</div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <label for="EmpAddress"> Employee Address: </label>
+        <input class="form-control" formControlName="eAddress"/>
+        <div class="err" *ngIf="empForm.controls['eAddress'].invalid">
+            <div *ngIf="empForm.controls['eAddress'].errors['required']">Employee Address is mandatory</div>
+            <div *ngIf="empForm.controls['eAddress'].errors['minlength']">Employee Address must be atleast a min of 10 charecters</div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <label for="EmpSalary"> Employee Salary: </label>
+        <input class="form-control" type="number" formControlName="eSalary"/>
+        <div class="err" *ngIf="empForm.controls['eSalary'].invalid">
+            <div *ngIf="empForm.controls['eSalary'].errors['required']">Employee Salary is mandatory</div>
+            <div *ngIf="empForm.controls['eSalary'].errors['minlength']">Employee Salary must be atleast a min of 3 charecters</div>
+        </div>
+    </div>
+    <button [disabled]="empForm.invalid" (click)="onClick()" class="btn btn-{{ empForm.invalid ? 'danger' : 'success' }}">Save Changes</button>
+</form>

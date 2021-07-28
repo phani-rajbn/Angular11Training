@@ -5,11 +5,24 @@
         <th>Employee Name</th>
         <th>Employee Address</th>
         <th>Employee Salary</th>
+        <th>Options</th>
     </tr>
     <tr *ngFor="let emp of data">
         <td>{{emp.empId}}</td>
         <td>{{emp.empName}}</td>
         <td>{{emp.empAddress}}</td>
         <td>{{emp.empSalary}}</td>
+        <td>
+            <button (click)="onEdit(emp.empId)">Edit</button>
+        </td>
     </tr>
 </table>
+<div *ngIf="selectedEmp">
+    <h2>Details of the Employee to Edit</h2>
+    <p>Employee ID: {{selectedEmp.empId}}</p>
+    <p><input [(ngModel)]="selectedEmp.empName"/></p>
+    <p><input [(ngModel)]="selectedEmp.empAddress"/></p>
+    <p><input [(ngModel)]="selectedEmp.empSalary"/></p>
+    <button (click)="onSave()"> Save Record </button>
+</div>
+<new-emp (onNewEmp) = "onAddNew($event)"></new-emp> 

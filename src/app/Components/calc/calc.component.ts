@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
+import { getMaxListeners } from 'process';
 
 @Component({
   selector: 'app-calc',
@@ -11,7 +12,9 @@ export class CalcComponent{
   second : number =0.0;
   result : number = 0.0;
   
-  onAdd = (first : number, second : number ) =>  this.result = first + second; 
+  addFunc = (first: number, second: number) : number  => first + second;
+  
+  public onAdd = (first : number, second : number ) =>  this.result = first + second; 
   
   onSubtract = (first: number, second: number) => this.result = first - second;
   
@@ -20,3 +23,4 @@ export class CalcComponent{
   onSqrt = (num : number) => this.result = Math.sqrt(num);
   //todo: write down the functions for multiply, divide, sqr and Sqrroot. 
 }
+//mailto:phani.blrtraining@gmail.com

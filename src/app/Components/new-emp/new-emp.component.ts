@@ -19,9 +19,8 @@ export class NewEmpComponent implements OnInit {
   //Some action done by the user when he clicks a button
   onAddEmployee(){
     let emp = new Employee(this.id, this.name, this.address, this.salary);
-    this.onNewEmp.emit(emp);
+    this.onNewEmp.emit(emp);//emit is the way to trigger the event which ejects the object to the caller. 
   }
-
 }
 /*
 Event Emitter is an interface object that will provide event feature to UR component. 
