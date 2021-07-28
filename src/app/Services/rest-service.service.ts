@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Employee } from '../Entities/employee';
 //HttpHeaders will provide additional info like authentication and access support. 
 //HttpClient gives the access to the REST SERVICES
 @Injectable({
   providedIn: 'root'
 })
+
 export class RestServiceService {
   private url : string = 'http://localhost:3000/employees';
   responseFromRest : any;
@@ -13,6 +15,22 @@ export class RestServiceService {
   }
 
   getAllEmployees = () => this.responseFromRest = this.hc.get(this.url);
+
+  addEmployee = (emp) : any => {
+    let headers = new HttpHeaders({'Content-Type' : "application/json"});
+    let details = this.hc.post(this.url, emp, { "headers" : headers });
+    return details;
+  }
+
+  getEmployee = (id : number) : any =>{
+      let tempUrl = this.url + '?empId=' + id;
+      this.responseFromRest = this.hc.get(tempUrl);
+  }
+
+  updateRecord = (emp : Employee) : any =>{
+    let headers = new HttpHeaders({"Content-Type" : "application/json"});
+    return this.hc.put(this.url, emp, {"headers" : headers});
+  }
 }
 
 //Service in Angular is an injectable object that can be created as a singleton reference and with which U can use the service as a single reference across the various components of the Module. How many ever times U create the service object, U get a same reference of it all the time. So this makes Ur service accessible across the components and give the same object to it. 
